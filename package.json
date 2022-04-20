@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/cnryb/cdp-demo#readme",
   "dependencies": {
+    "chrome-remote-interface": "^0.31.2",
     "puppeteer": "^13.5.2",
     "ws": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/chrome-remote-interface": "^0.31.4"
   }
 }
