@@ -21,9 +21,12 @@ function SEND(ws, command) {
   const ws = new WebSocket(browser.wsEndpoint(), { perMessageDeflate: false });
   await new Promise(resolve => ws.once('open', resolve));
   // 查询所有可用的目标列表
+  // 请求的结构体中需要包含 id , method , 和一个可选的 params 字段
+  // 这种特殊的数据格式和 websocket ，有没有让大家想到点什么？
   const targetsResponse = await SEND(ws, {
     id: 1,
     method: 'Target.getTargets',
+    params: {}
   });
 
   const pageTarget = targetsResponse.result.targetInfos.find(info => info.type === 'page');
